@@ -12,8 +12,7 @@ Wireshark is already installed on the Linux partitions on the lab computers. You
 **3. What browser was used?** Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.220 Safari/535.1
 ![question3](https://user-images.githubusercontent.com/89669624/140392103-03b6576f-d6bc-46a0-80fa-2a221e6420ee.png)
 
-**4. What version of HTTP was used?** HTTP/1.1![question12](https://user-images.githubusercontent.com/89669624/140394642-02e98241-cfaf-4d2f-98cc-c5af08d1248e.png)
-
+**4. What version of HTTP was used?** HTTP/1.1!
 ![question4](https://user-images.githubusercontent.com/89669624/140392346-9d6231dd-837d-4896-a310-d4f85001cb67.png)
 
 **5. Was persistent or non-persistent HTTP used? How can you tell?** Connection: Keep-alive, so persistent.
@@ -43,22 +42,29 @@ Wireshark is already installed on the Linux partitions on the lab computers. You
 **13. What is the ACK number sent by the client during the third leg of the three-way handshake?** Acknowledgment number: 1 (relative ack number) Acknowledgment number (raw): 801751992
 ![question13](https://user-images.githubusercontent.com/89669624/140394781-18ea1587-f157-44ae-8be1-f970eeeb0cea.png)
 
-**14. In the first leg of the three-way handshake, how large is the TCP header? Is this larger than TCP's minimum header?** 1000 .... = Header Length: 32 bytes (8)
+**14. In the first leg of the three-way handshake, how large is the TCP header? Is this larger than TCP's minimum header?** 1000 .... = Header Length: 32 bytes (8), the TCP minimum header size is 24 bytes, so this is larger.
+![image](https://user-images.githubusercontent.com/89669624/140450905-867df408-52b4-436b-8b48-7c3d697103e0.png)
 
-15. Is any data sent during the third leg of the three-way handshake? If so, what is it? 
+**15. Is any data sent during the third leg of the three-way handshake? If so, what is it?:**
 
 16. During the three-way handshake, what is the client's TCP advertised receive window? How does this value relate to the maximum possible? 
 
-**17. What are the source and destination ports of the segments traveling from the client to the server?** 
+**17. What are the source and destination ports of the segments traveling from the client to the server?:** 
 
-18. What are the source and destination IP addresses of the datagrams traveling from the client to the server? 
+**18. What are the source and destination IP addresses of the datagrams traveling from the client to the server?:** Source: 172.16.1.131, Destination: 69.31.31.194
+![image](https://user-images.githubusercontent.com/89669624/140451199-5972824d-4169-440a-8497-bc8e9df8c03e.png)
 
-19. What are the source and destination ports of the segments traveling from the server to the client? 
+**19. What are the source and destination ports of the segments traveling from the server to the client?:** Source Port: 80, Destination Port: 50303
+![image](https://user-images.githubusercontent.com/89669624/140451607-32f42de5-3539-4e51-a1e6-e50e580d5767.png)
 
-20. What are the source and destination IP addresses of the datagrams traveling from the server to the client? 
+**20. What are the source and destination IP addresses of the datagrams traveling from the server to the client?** Source: 69.31.31.194, Destination: 172.16.1.131
+![image](https://user-images.githubusercontent.com/89669624/140451759-5b44699c-2d97-4e8f-8b0f-2b638e428ef1.png)
 
-21. In which segments do you find a TCP connection close? How can you tell? 
+**21. In which segments do you find a TCP connection close? How can you tell?:** This packet contains a FIN value. TCP FIN packet is required to close a connection. During normal circumstances both sides are sending and receiving data simultaneously. Connection termination typically begins with one side signalling that it wants to close the connection to ensure that the connection is shutting down gracefully.
+![image](https://user-images.githubusercontent.com/89669624/140452880-3c788e7b-8e86-4ec5-8526-d00ba644f902.png)
 
-22. In the packet containing the first leg of the three-way handshake, what is the value of the protocol (i.e., upper-layer-protocol) field in the IP header? 
+**22. In the packet containing the first leg of the three-way handshake, what is the value of the protocol (i.e., upper-layer-protocol) field in the IP header?:** Protocol: TCP (6)
+![image](https://user-images.githubusercontent.com/89669624/140453101-a1dae882-a993-4538-a17e-3cc0af0b1526.png)
 
-23. In this same packet's IP header, what is the value of the Identification field? What is the purpose of the Identification field? In what case would we expect to find the same Identification value in other packets?  
+**23. In this same packet's IP header, what is the value of the Identification field? What is the purpose of the Identification field? In what case would we expect to find the same Identification value in other packets?:** Identification: 0x52e9 (21225), a simple 16-bit field is displayed in Hex and identifies fragmented packets. Identifies the individual packets that the sender transmits.
+![image](https://user-images.githubusercontent.com/89669624/140453178-0a40e7ab-ce0e-4bc3-987e-b1c61591990a.png)
